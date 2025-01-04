@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprenda a Desenhar do Zero</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #000428, #004e92);
+            text-align: center;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('seu-desenho-realista.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .persuasive-text {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #d63384;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta:hover {
+            background-color: #e91e63;
+            transform: translateY(-3px);
+        }
+
+        .price {
+            font-size: 1.2em;
+            margin-top: 15px;
+            color: #ffc107;
+        }
+
+        .warning {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Aprenda a Desenhar do Zero</h1>
+            <p class="persuasive-text">
+                "Há um poder silencioso em cada traço, um universo esperando para ganhar vida. Você não precisa de um dom mágico, apenas da orientação certa. Transforme suas ideias em arte, suas dúvidas em confiança. É hora de deixar sua marca no papel e no mundo."
+            </p>
+            <a href="https://seu-link-para-aulas-gratis.com" class="cta" target="_blank">Comece Agora por Apenas R$57,90</a>
+            <p class="price">Oferta válida por tempo limitado</p>
+            <p class="warning">Receba 2 aulas grátis antes de tomar a melhor decisão!</p>
+        </div>
+    </div>
+</body>
+</html>
