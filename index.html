@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MidJourney Magnético</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: #000;
+            overflow: hidden;
+        }
+
+        /* Fundo com efeito de fumaça */
+        .smoke-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(128,0,128,0.7) 0%, rgba(0,0,0,1) 100%);
+            z-index: -1;
+            animation: smoke-animation 6s infinite alternate;
+        }
+
+        @keyframes smoke-animation {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        /* Conteúdo principal */
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .joker-image {
+            width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px #ff00ff;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .cta {
+            font-size: 1.5em;
+            background: linear-gradient(90deg, #ff00ff, #800080);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 5px #000;
+            transition: background 0.3s ease;
+        }
+
+        .cta:hover {
+            background: linear-gradient(90deg, #800080, #ff00ff);
+        }
+
+        /* Contador de tempo */
+        .timer {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #ff00ff;
+            font-weight: bold;
+        }
+
+        .promo {
+            font-size: 1.8em;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #ff0;
+            text-shadow: 1px 1px 5px #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="smoke-background"></div>
+
+    <div class="container">
+        <!-- Adicionando a imagem do Coringa -->
+        <img src="coringa-realista.png" alt="Coringa Realista" class="joker-image">
+
+        <h1>Entre o Papel e o Digital</h1>
+        <p>
+            O que acontece quando o caos encontra a criatividade ? Você tem nas mãos a fusão perfeita entre o 
+            tradicional e o moderno. <br><strong>MidJourney Magnético</strong> vai te mostrar como transformar pixels em emoção e 
+            referências digitais em arte no papel. A revolução não será televisionada... mas estará em suas mãos.
+        </p>
+
+        <div class="promo">De R$ 397,00 por apenas R$ 85,00 !! </div>
+
+        <button class="cta" onclick="window.location.href='https://seulink.com'">
+            Quero minha vaga!
+        </button>
+
+        <div class="timer" id="countdown">Oferta acaba em: 00:00:00</div>
+    </div>
+
+    <script>
+        // Contador de tempo
+        const countdown = document.getElementById('countdown');
+        const targetDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 horas a partir de agora
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance > 0) {
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000)) / 1000);
+
+                countdown.innerHTML = `Oferta acaba em: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            } else {
+                countdown.innerHTML = "A oferta terminou!";
+                clearInterval(interval);
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
